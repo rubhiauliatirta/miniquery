@@ -29,21 +29,8 @@ class MiniQuery{
 
 }
 var miniquery = function(str){
-    return new MiniQuery(str)
-
-
-   
+    return new MiniQuery(str) 
 }
 
-// var miniquery = (function(str) {
-//     var f = function() {
-//         return 'Beep';
-//     };
-//     for (i in args) {
-//         f[i] = args[i];
-//     }
-//     return f;
-// }({
-//     'name': 'Tom',
-//     'name2': 'John'
-// }));
+var $ = miniquery;
+
