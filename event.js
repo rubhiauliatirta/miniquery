@@ -24,13 +24,12 @@ var EventDispatcher = (function () {
         }
     }
     return {
-        on: function(str, event, func){
-            let elements = SweetSelector.select(str)
-            _on(elements,event,func)
+        on: function(event, func){
+            _on(this._elements,event,func)
         },
-        trigger: function(str,event){
-            let elements = SweetSelector.select(str)
-            _trigger(elements,event) 
+        trigger: function(event){
+    
+            _trigger(this._elements,event) 
         }
         
     };

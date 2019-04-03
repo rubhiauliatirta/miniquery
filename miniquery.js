@@ -6,24 +6,32 @@
 //         AjaxWrapper :AjaxWrapper
 // //     }
 // // })();
+
+class MiniQuery{
+    constructor(str){
+        this._elements = SweetSelector.select(str)
+        // this.hide = DOM.hide(this._elements)
+        this.setting();
+        this.hide = DOM.hide;
+        this.show = DOM.show;
+        this.addClass = DOM.addClass;
+        this.removeClass = DOM.removeClass;
+        this.on = EventDispatcher.on;
+        this.trigger = EventDispatcher.trigger;
+        this.request = AjaxWrapper.request;
+    }
+    setting(){
+        DOM._elements = this._elements;
+        EventDispatcher._elements = this._elements;
+        AjaxWrapper._elements = this._elements;
+    }
+    
+
+}
 var miniquery = function(str){
-    var elements = SweetSelector.select(str);
-    hide = function(){
-        //let elements = SweetSelector.select(str)
-        _hideShow(elements, false)
-    };
-    show = function(elements){
-        //let elements = SweetSelector.select(str)
-        _hideShow(elements, true)
-    };
-    addClass = function(str, className){
-        //let elements = SweetSelector.select(str)
-        _addRemoveClass(className,elements, true)
-    };
-    removeClass = function(str, className){
-        //let elements = SweetSelector.select(str)
-        _addRemoveClass(className,elements, false)
-    };
+    return new MiniQuery(str)
+
+
    
 }
 

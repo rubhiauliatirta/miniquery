@@ -23,21 +23,17 @@ var DOM = (function () {
         }
     }
     return {
-        hide: function(str){
-            let elements = SweetSelector.select(str)
-            _hideShow(elements, false)
+        hide: function(){      
+            _hideShow(this._elements, false)
         },
-        show: function(str){
-            let elements = SweetSelector.select(str)
-            _hideShow(elements, true)
+        show: function(){
+            _hideShow(this._elements, true)
         },
-        addClass: function(str, className){
-            let elements = SweetSelector.select(str)
-            _addRemoveClass(className,elements, true)
+        addClass: function(className){
+            _addRemoveClass(className,this._elements, true)
         },
-        removeClass: function(str, className){
-            let elements = SweetSelector.select(str)
-            _addRemoveClass(className,elements, false)
+        removeClass: function(className){
+            _addRemoveClass(className,this._elements, false)
         }
         
     };
